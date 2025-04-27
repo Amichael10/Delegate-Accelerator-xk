@@ -3,6 +3,7 @@ import { Search, Filter, ChevronDown, Users, ArrowUpRight, Zap, Shield, Layers }
 import MainLayout from "@/components/main-layout"
 import Link from "next/link"
 import Image from "next/image"
+import { Card, CardContent, Badge, Avatar, ProgressBar } from "../components/ui-components"
 
 export default function DiscoveryPage() {
   return (
@@ -51,11 +52,137 @@ export default function DiscoveryPage() {
         {/* Featured Campaigns */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Featured Campaigns</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredCampaigns.map((campaign) => (
-              <FeaturedCampaignCard key={campaign.id} campaign={campaign} />
-            ))}
-          </div>
+          <section className="mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* MakerDAO Campaign */}
+              <Card>
+                <div className="relative h-40 w-full">
+                  <Image
+                    src="/maker-dao-banner.webp"
+                    alt="MakerDAO Campaign"
+                    fill
+                    className="object-cover rounded-t-lg"
+                  />
+                </div>
+                <CardContent>
+                  <div className="flex items-center mb-3">
+                    <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
+                      <Image src="/maker-mkr-logo.png" alt="MakerDAO" width={32} height={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold">MakerDAO</h3>
+                      <p className="text-xs text-gray-400">Treasury Management</p>
+                    </div>
+                    <Badge variant="info" className="ml-auto">
+                      Active
+                    </Badge>
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2">Treasury Diversification Strategy</h4>
+                  <p className="text-sm text-gray-300 mb-4">
+                    Help shape MakerDAO's treasury management strategy for long-term sustainability.
+                  </p>
+                  <div className="flex justify-between text-xs text-gray-400 mb-2">
+                    <span>Progress</span>
+                    <span>65%</span>
+                  </div>
+                  <ProgressBar value={65} className="mb-4" />
+                  <div className="flex justify-between items-center">
+                    <div className="flex -space-x-2">
+                      <Avatar src="/confident-businessman.png" alt="User" size="sm" />
+                      <Avatar src="/confident-professional.png" alt="User" size="sm" />
+                      <Avatar src="/confident-asian-professional.png" alt="User" size="sm" />
+                      <div className="w-6 h-6 rounded-full bg-[#222] flex items-center justify-center text-xs">+5</div>
+                    </div>
+                    <span className="text-xs text-gray-400">8 days left</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Lido DAO Campaign */}
+              <Card>
+                <div className="relative h-40 w-full">
+                  <Image
+                    src="/lido-dao-banner.webp"
+                    alt="Lido DAO Campaign"
+                    fill
+                    className="object-cover rounded-t-lg"
+                  />
+                </div>
+                <CardContent>
+                  <div className="flex items-center mb-3">
+                    <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
+                      <Image src="/lido-dao-ldo-logo.png" alt="Lido DAO" width={32} height={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold">Lido DAO</h3>
+                      <p className="text-xs text-gray-400">Staking Protocol</p>
+                    </div>
+                    <Badge variant="success" className="ml-auto">
+                      New
+                    </Badge>
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2">Staking Rewards Distribution</h4>
+                  <p className="text-sm text-gray-300 mb-4">
+                    Participate in designing the next phase of Lido's staking rewards distribution model.
+                  </p>
+                  <div className="flex justify-between text-xs text-gray-400 mb-2">
+                    <span>Progress</span>
+                    <span>40%</span>
+                  </div>
+                  <ProgressBar value={40} className="mb-4" />
+                  <div className="flex justify-between items-center">
+                    <div className="flex -space-x-2">
+                      <Avatar src="/confident-indian-architect.png" alt="User" size="sm" />
+                      <Avatar src="/thoughtful-bearded-professional.png" alt="User" size="sm" />
+                      <div className="w-6 h-6 rounded-full bg-[#222] flex items-center justify-center text-xs">+3</div>
+                    </div>
+                    <span className="text-xs text-gray-400">12 days left</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Aave Campaign */}
+              <Card>
+                <div className="relative h-40 w-full bg-gradient-to-r from-purple-900 to-blue-900 rounded-t-lg">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Image src="/aave-aave-logo.png" alt="Aave" width={80} height={80} className="rounded-full" />
+                  </div>
+                </div>
+                <CardContent>
+                  <div className="flex items-center mb-3">
+                    <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
+                      <Image src="/aave-aave-logo.png" alt="Aave" width={32} height={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold">Aave</h3>
+                      <p className="text-xs text-gray-400">Lending Protocol</p>
+                    </div>
+                    <Badge variant="warning" className="ml-auto">
+                      Trending
+                    </Badge>
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2">Risk Parameter Optimization</h4>
+                  <p className="text-sm text-gray-300 mb-4">
+                    Help analyze and optimize risk parameters for Aave's lending markets.
+                  </p>
+                  <div className="flex justify-between text-xs text-gray-400 mb-2">
+                    <span>Progress</span>
+                    <span>75%</span>
+                  </div>
+                  <ProgressBar value={75} className="mb-4" />
+                  <div className="flex justify-between items-center">
+                    <div className="flex -space-x-2">
+                      <Avatar src="/confident-latinx-leader.png" alt="User" size="sm" />
+                      <Avatar src="/thoughtful-student.png" alt="User" size="sm" />
+                      <Avatar src="/confident-professional.png" alt="User" size="sm" />
+                      <div className="w-6 h-6 rounded-full bg-[#222] flex items-center justify-center text-xs">+7</div>
+                    </div>
+                    <span className="text-xs text-gray-400">5 days left</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
         </div>
 
         {/* DAO Categories */}
@@ -273,9 +400,9 @@ const featuredCampaigns: Campaign[] = [
     description: "Join MakerDAO as a governance delegate and help shape the future of decentralized finance.",
     dao: {
       name: "MakerDAO",
-      logo: "/abstract-letter-m.png",
+      logo: "/maker-mkr-logo.png",
     },
-    image: "/financial-flow.png",
+    image: "/maker-dao-banner.webp",
     deadline: "2 weeks",
     positions: 5,
     skills: ["Governance", "DeFi Knowledge", "Risk Assessment"],
@@ -287,9 +414,9 @@ const featuredCampaigns: Campaign[] = [
     description: "Lido DAO is seeking technical committee members to evaluate protocol upgrades and improvements.",
     dao: {
       name: "Lido DAO",
-      logo: "/Abstract Letter L.png",
+      logo: "/lido-dao-ldo-logo.png",
     },
-    image: "/amethyst-flow.png",
+    image: "/lido-dao-banner.webp",
     deadline: "3 weeks",
     positions: 3,
     skills: ["Technical Analysis", "Staking", "Security"],
@@ -301,7 +428,7 @@ const allDaos: Dao[] = [
   {
     id: 1,
     name: "MakerDAO",
-    logo: "/abstract-letter-m.png",
+    logo: "/maker-mkr-logo.png",
     category: "DeFi Protocol",
     description: "Decentralized credit platform that supports Dai, a stablecoin whose value is pegged to USD.",
     members: 65000,
@@ -312,7 +439,7 @@ const allDaos: Dao[] = [
   {
     id: 2,
     name: "Lido DAO",
-    logo: "/Abstract Letter L.png",
+    logo: "/lido-dao-ldo-logo.png",
     category: "Staking Protocol",
     description: "Liquid staking solution for ETH 2.0 that lets users stake their ETH without locking assets.",
     members: 42000,
@@ -323,7 +450,7 @@ const allDaos: Dao[] = [
   {
     id: 3,
     name: "Aave",
-    logo: "/letter-a-abstract.png",
+    logo: "/aave-aave-logo.png",
     category: "Lending Protocol",
     description: "Open source and non-custodial liquidity protocol for earning interest and borrowing assets.",
     members: 38000,
@@ -334,7 +461,7 @@ const allDaos: Dao[] = [
   {
     id: 4,
     name: "Uniswap",
-    logo: "/abstract-blue-swirl.png",
+    logo: "/uniswap-uni-logo.png",
     category: "DEX Protocol",
     description: "Decentralized trading protocol, known for its role in facilitating automated trading of DeFi tokens.",
     members: 72000,
@@ -345,7 +472,7 @@ const allDaos: Dao[] = [
   {
     id: 5,
     name: "Optimism",
-    logo: "/abstract-letter-o.png",
+    logo: "/optimism-ethereum-op-logo.png",
     category: "L2 Solution",
     description: "Layer 2 scaling solution for Ethereum that utilizes optimistic rollups.",
     members: 28000,
@@ -356,7 +483,7 @@ const allDaos: Dao[] = [
   {
     id: 6,
     name: "ENS",
-    logo: "/letter-e-in-nature.png",
+    logo: "/ethereum-name-service-ens-logo.png",
     category: "Naming Service",
     description: "Decentralized naming service for web3, providing human-readable names to blockchain addresses.",
     members: 45000,

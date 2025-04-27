@@ -42,9 +42,9 @@ export default function ProfilePage({ params }: ProfilePageProps) {
       "Community Engagement",
     ],
     daos: [
-      { name: "MakerDAO", logo: "/abstract-letter-m.png", role: "Core Delegate" },
-      { name: "Aave", logo: "/letter-a-abstract.png", role: "Governance Contributor" },
-      { name: "Uniswap", logo: "/abstract-blue-swirl.png", role: "Proposal Reviewer" },
+      { name: "MakerDAO", logo: "/maker-mkr-logo.png", role: "Core Delegate" },
+      { name: "Aave", logo: "/aave-aave-logo.png", role: "Governance Contributor" },
+      { name: "Uniswap", logo: "/uniswap-uni-logo.png", role: "Proposal Reviewer" },
     ],
     stats: {
       completedProposals: 32,

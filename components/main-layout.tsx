@@ -1,10 +1,11 @@
 "use client"
 
 import type React from "react"
-import { Search, BookOpen, Map, Medal, BarChart2, Trophy, Zap, Cpu, Users, X } from "lucide-react"
+import { Search, BookOpen, Map, Medal, BarChart2, Trophy, Zap, Cpu, Users, X } from 'lucide-react'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import { SearchInput } from './ui-components';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -56,17 +57,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         {/* Top Search Bar */}
         <div className="p-4 flex items-center border-b border-[#333]">
           <div className="relative w-[300px]">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-[#222222] w-full pl-10 pr-4 py-2 rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-gray-600"
-            />
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <span className="text-xs text-gray-500">Press /</span>
-            </div>
+            <SearchInput placeholder="Search" />
           </div>
 
           <div className="ml-auto flex items-center space-x-4">
